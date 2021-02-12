@@ -1,0 +1,55 @@
+<div class="row mt-5">
+    <div class="col-12">
+        <h1>Héroe <small>Nombre del Héroe</small></h1>
+        <hr>
+
+        <div class="row">
+            <div class="col text-right">
+                <button class="btn btn-danger" [routerLink]="['/heroes']" routerLinkActive="router-link-active" ><i class="fa fa-arrow-left"></i> Regresar</button>
+            </div>
+        </div>
+
+        <div class="row aminated fadeIn faster">
+            <div class="col">
+                <form class="needs-validation" (ngSubmit)="save(f)" #f="ngForm">
+                    <div class="form-row">
+                      <div class="col-md-12 mb-3">
+                        <label>Firebase ID</label>
+                        <input type="text" class="form-control" placeholder="Firebase ID" name="id" [(ngModel)]="heroe.id" disabled="disabled">
+                        <small class="form-text text-muted">Este campo es autogenerado</small>
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="col-md-6 mb-3">
+                        <label>Nombre</label>
+                        <input type="text" class="form-control" placeholder="Nombre del héroe" name="name" [(ngModel)]="heroe.name" required>
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                        <label>Poder</label>
+                        <input type="text" class="form-control" placeholder="Poder del héroe" name="power" [(ngModel)]="heroe.power">
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label>Vivo</label>
+                            <br>
+                            <button *ngIf="heroe.life" (click)="heroe.life = false" class="btn btn-outline-success btn-block" type="button"><i class="fa fa-smile-wink"></i> Vivo</button>
+                            <button *ngIf="!heroe.life" (click)="heroe.life = true" class="btn btn-outline-danger btn-block" type="button"><i class="fa fa-dizzy"></i> Muerto</button>
+                        </div>
+                    </div>
+                    
+                    <hr>
+
+                    <div class="form-row text-center">
+                        <div class="col-md-12 mb-3">
+                            <button class="btn btn-primary w-25" type="submit"><i class="fa fa-save"></i> Crear</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
