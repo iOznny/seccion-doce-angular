@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "seccion-doce-angular"
+    }
+  },
+  "defaultProject": "seccion-doce-angular",
+  "cli": {
+    "analytics": "d88a5656-d78d-4227-831f-b60fd5c4db27"
+  }
 }
